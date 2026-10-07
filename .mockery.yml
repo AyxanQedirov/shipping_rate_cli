@@ -1,0 +1,25 @@
+template: file://.mockery/testify.templ
+template-schema: file://.mockery/testify.templ.schema.json
+formatter: goimports
+force-file-write: true
+packages:
+  shipping_rate_cli/internal/application/abstractions:
+    interfaces:
+      IZoneRepository:
+        config:
+          dir: internal/infrastructure/repositories
+          filename: zone_repository_mock.go
+          pkgname: repositories
+          structname: MockZoneRepository
+      IShippingRateCalculator:
+        config:
+          dir: internal/application/services
+          filename: shipping_rate_calculator_mock.go
+          pkgname: services
+          structname: MockShippingRateCalculator
+      IParcelService:
+        config:
+          dir: internal/application/services
+          filename: parcel_service_mock.go
+          pkgname: services
+          structname: MockParcelService
